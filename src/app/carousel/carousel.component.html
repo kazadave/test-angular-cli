@@ -1,7 +1,7 @@
 <nav>
   <ul>
-    <li *ngFor="let item of menuList">
-      <img src="{{carousel.href}}" alt=""/>
+    <li *ngFor="let item of imageList">
+      <img [src]="item" (click)="clickImage($event, item)" alt=""/>
     </li>
   </ul>
 </nav>

@@ -2,7 +2,9 @@
   [menuList]="menu"
   (clickItem$)="onMenuClickItem($event)"
 ></app-menu>
-<app-carousel>
-  
+<app-carousel
+  [imageList]="carousel"
+  (clickImage$)="onClickImage($event)">
 </app-carousel>
+
 <!-- <img src="{{image}}" alt="obraz"/> -->

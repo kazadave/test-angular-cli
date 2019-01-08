@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-carousel',
@@ -8,14 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class CarouselComponent implements OnInit {
 
 
-  carousel = [
-    {href: 'https://picsum.photos/200/300?image=0'},
-    {href: 'https://picsum.photos/200/300?image=1'},
-    {href: 'https://picsum.photos/200/300?image=2'},
-    {href: 'https://picsum.photos/200/300?image=3'}
-  ]
+  @Input() imageList: Array<String> = null;
+  @Output() clickImage$ = new EventEmitter();
   constructor() { }
 
+  clickImage(e, item) {
+    this.clickImage$.next(item);
+  }
   ngOnInit() {
   }
 
